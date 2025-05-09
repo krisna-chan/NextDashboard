@@ -25,9 +25,8 @@ const recentOrders = [
 ]
 export default function Dashboard() {
   return (
-    <div className="flex h-screen">
+    <div>
       <AppSidebar />
-      
       <div className="flex-1 overflow-auto">
         {/* Top navbar */}
         <header className="top-0 z-10  border-b">
