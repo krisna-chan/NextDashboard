@@ -15,7 +15,7 @@ import { useTheme } from "next-themes";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 
 export default function Navbar() {
-    const { theme , setTheme } = useTheme();
+    const { setTheme } = useTheme();
     
     return (
         <nav className="flex items-center justify-between w-full h-16 shadow-md px-4">

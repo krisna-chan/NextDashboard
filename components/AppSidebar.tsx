@@ -1,5 +1,4 @@
 import { ShoppingBag, LayoutDashboard, Folder, Users2, Settings, Bug } from "lucide-react"
-import Image from "next/image"
 import {
   Sidebar,
   SidebarContent,
