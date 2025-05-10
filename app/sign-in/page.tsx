@@ -4,21 +4,20 @@ import { useState } from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form" // Keep this import
+import { useForm } from "react-hook-form" 
 import * as z from "zod"
 import { LockKeyhole, Mail, EyeIcon, EyeOffIcon } from "lucide-react"
 
 // Import shadcn components
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label" // Label is imported but not directly used in the form; FormLabel is used. Keep if used elsewhere or for consistency.
+
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
 import { Checkbox } from "@/components/ui/checkbox"
 import {
   Form,
   FormControl,
-  FormDescription, // FormDescription is imported but not used. You can remove it if not needed.
   FormField,
   FormItem,
   FormLabel,
@@ -50,7 +49,7 @@ export default function SignInPage() {
   });
 
   // Form submission handler
-  function onSubmit(values: FormSchemaType) { // Use FormSchemaType here for clarity
+  function onSubmit(values: FormSchemaType) { 
     setIsLoading(true);
     
     // Simulate authentication delay
@@ -129,7 +128,7 @@ export default function SignInPage() {
                           type="button"
                           onClick={() => setShowPassword(!showPassword)}
                           className="absolute right-3 top-3 text-gray-500 hover:text-gray-300"
-                          aria-label={showPassword ? "Hide password" : "Show password"} // Added aria-label for accessibility
+                          aria-label={showPassword ? "Hide password" : "Show password"} 
                         >
                           {showPassword ? (
                             <EyeOffIcon className="h-4 w-4" />
@@ -152,7 +151,7 @@ export default function SignInPage() {
                         <Checkbox
                           checked={field.value}
                           onCheckedChange={field.onChange}
-                          className="border-gray-600 data-[state=checked]:bg-blue-600 data-[state=checked]:text-white" // Example styling for checkbox
+                          className="border-gray-600 data-[state=checked]:bg-blue-600 data-[state=checked]:text-white" 
                         />
                       </FormControl>
                       <div className="space-y-1 leading-none">
@@ -197,7 +196,7 @@ export default function SignInPage() {
           
           <CardFooter className="flex justify-center border-t border-gray-800 p-6">
             <p className="text-sm text-gray-400">
-              Don't have an account?{" "}
+              Dont have an account?{" "}
               <Link 
                 href="/signup" 
                 className="text-blue-400 hover:text-blue-300"
