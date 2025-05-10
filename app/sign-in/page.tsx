@@ -196,7 +196,7 @@ export default function SignInPage() {
           
           <CardFooter className="flex justify-center border-t border-zinc-800 p-6">
             <p className="text-sm text-zinc-400">
-              Don't have an account?{" "}
+              Dont have an account?{" "}
               <Link 
                 href="/signup" 
                 className="text-blue-400 hover:text-blue-300"
