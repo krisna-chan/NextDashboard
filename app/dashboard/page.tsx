@@ -6,6 +6,9 @@ import { AppSidebar } from "@/components/AppSidebar"
 import { Search, Bell, DollarSign, Users, Package, CreditCard, ArrowUpRight, ArrowDownRight } from "lucide-react"
 import StatusBadge  from "@/components/ui/status-badge"
 
+// Define StatusType for order statuses
+type StatusType = "Completed" | "Processing" | "Shipped" | "Pending";
+
 // Example data for dashboard
 const salesData = [
   { name: "Jan", total: 1200 },
@@ -170,7 +173,7 @@ export default function Dashboard() {
                       </div>
                       <div className="flex items-center gap-3">
                         <span className="font-medium">${order.amount.toFixed(2)}</span>
-                        <StatusBadge status={order.status} />
+                        <StatusBadge status={order.status as StatusType} />
                       </div>
                     </div>
                   ))}

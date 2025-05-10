@@ -14,6 +14,7 @@ import { Button } from "@/components/ui/button";
 import { useTheme } from "next-themes";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 
+
 export default function Navbar() {
     const { setTheme } = useTheme();
     
@@ -60,7 +61,10 @@ export default function Navbar() {
     <DropdownMenuSeparator />
     <DropdownMenuItem><User/> Profile</DropdownMenuItem>
     <DropdownMenuItem><Settings/> Setting</DropdownMenuItem>
-    <DropdownMenuItem variant="destructive"><LogOut/> Logout</DropdownMenuItem>
+    <Link href="/sign-in">
+        <DropdownMenuItem variant="destructive"><LogOut/> Logout</DropdownMenuItem>
+    </Link>
+    
   </DropdownMenuContent>
 </DropdownMenu>
 
