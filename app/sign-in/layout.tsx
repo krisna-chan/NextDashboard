@@ -5,7 +5,7 @@ export default function SignInLayout({
 }) {
   return (
     <main >
-      <div>{children}</div>
+      <div className="bg-zinc-950">{children}</div>
     </main>
   );
 }

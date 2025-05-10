@@ -24,7 +24,7 @@ import {
   FormMessage,
 } from "@/components/ui/form"
 
-// Schema & Type (These can stay outside the component)
+
 const formSchema = z.object({
   email: z.string().email({ message: "Please enter a valid email address" }),
   password: z.string().min(8, { message: "Password must be at least 8 characters" }),
@@ -38,7 +38,7 @@ export default function SignInPage() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [showPassword, setShowPassword] = useState<boolean>(false);
 
-  // Initialize the form inside the component
+  
   const form = useForm<FormSchemaType>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -61,17 +61,17 @@ export default function SignInPage() {
   }
 
   return (
-    <div className="flex h-screen w-full items-center justify-center bg-gray-950 text-gray-200">
+    <div className="flex h-screen w-full items-center justify-center bg-zinc-950 text-zinc-200">
       <div className="w-full max-w-md px-4">
         <div className="mb-8 text-center">
-          <h1 className="text-3xl font-bold text-white">Polymer</h1>
-          <p className="mt-2 text-gray-400">Sign in to your account</p>
+          <h1 className="text-3xl font-bold text-zinc-50">Polymer</h1>
+          <p className="mt-2 text-zinc-400">Sign in to your account</p>
         </div>
         
-        <Card className="border-gray-800 bg-gray-900">
+        <Card className="border-zinc-800 bg-zinc-900/60 shadow-xl">
           <CardHeader className="space-y-1">
-            <CardTitle className="text-2xl text-white">Sign in</CardTitle>
-            <CardDescription className="text-gray-400">
+            <CardTitle className="text-2xl text-zinc-50">Sign in</CardTitle>
+            <CardDescription className="text-zinc-400">
               Enter your email and password to access your account
             </CardDescription>
           </CardHeader>
@@ -84,18 +84,18 @@ export default function SignInPage() {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-gray-300">Email</FormLabel>
+                      <FormLabel className="text-zinc-300">Email</FormLabel>
                       <div className="relative">
-                        <Mail className="absolute left-3 top-3 h-4 w-4 text-gray-500" />
+                        <Mail className="absolute left-3 top-3 h-4 w-4 text-zinc-500" />
                         <FormControl>
                           <Input 
                             placeholder="name@example.com"
-                            className="border-gray-700 bg-gray-800 pl-10 text-gray-200 placeholder:text-gray-500 focus:border-gray-600 focus:ring-gray-600"
+                            className="border-zinc-800 bg-zinc-950/70 pl-10 text-zinc-200 placeholder:text-zinc-600 focus-visible:ring-zinc-700 ring-offset-zinc-900"
                             {...field}
                           />
                         </FormControl>
                       </div>
-                      <FormMessage className="text-red-400" />
+                      <FormMessage className="text-red-500" />
                     </FormItem>
                   )}
                 />
@@ -106,7 +106,7 @@ export default function SignInPage() {
                   render={({ field }) => (
                     <FormItem>
                       <div className="flex items-center justify-between">
-                        <FormLabel className="text-gray-300">Password</FormLabel>
+                        <FormLabel className="text-zinc-300">Password</FormLabel>
                         <Link 
                           href="/forgot-password" 
                           className="text-sm text-blue-400 hover:text-blue-300"
@@ -115,19 +115,19 @@ export default function SignInPage() {
                         </Link>
                       </div>
                       <div className="relative">
-                        <LockKeyhole className="absolute left-3 top-3 h-4 w-4 text-gray-500" />
+                        <LockKeyhole className="absolute left-3 top-3 h-4 w-4 text-zinc-500" />
                         <FormControl>
                           <Input 
                             type={showPassword ? "text" : "password"}
                             placeholder="••••••••"
-                            className="border-gray-700 bg-gray-800 pl-10 pr-10 text-gray-200 placeholder:text-gray-500 focus:border-gray-600 focus:ring-gray-600"
+                            className="border-zinc-800 bg-zinc-950/70 pl-10 pr-10 text-zinc-200 placeholder:text-zinc-600 focus-visible:ring-zinc-700 ring-offset-zinc-900"
                             {...field}
                           />
                         </FormControl>
                         <button 
                           type="button"
                           onClick={() => setShowPassword(!showPassword)}
-                          className="absolute right-3 top-3 text-gray-500 hover:text-gray-300"
+                          className="absolute right-3 top-3 text-zinc-500 hover:text-zinc-300"
                           aria-label={showPassword ? "Hide password" : "Show password"} 
                         >
                           {showPassword ? (
@@ -137,7 +137,7 @@ export default function SignInPage() {
                           )}
                         </button>
                       </div>
-                      <FormMessage className="text-red-400" />
+                      <FormMessage className="text-red-500" />
                     </FormItem>
                   )}
                 />
@@ -151,12 +151,12 @@ export default function SignInPage() {
                         <Checkbox
                           checked={field.value}
                           onCheckedChange={field.onChange}
-                          className="border-gray-600 data-[state=checked]:bg-blue-600 data-[state=checked]:text-white" 
+                          className="border-zinc-700 data-[state=checked]:bg-blue-600 data-[state=checked]:border-blue-600" 
                         />
                       </FormControl>
                       <div className="space-y-1 leading-none">
-                        <FormLabel className="text-sm text-gray-400 font-normal">
-                          Remember me for 30 days
+                        <FormLabel className="text-sm text-zinc-400 font-normal">
+                          Remember me
                         </FormLabel>
                       </div>
                     </FormItem>
@@ -175,28 +175,28 @@ export default function SignInPage() {
             
             <div className="relative my-6">
               <div className="absolute inset-0 flex items-center">
-                <Separator className="w-full bg-gray-700" />
+                <Separator className="w-full bg-zinc-800" />
               </div>
               <div className="relative flex justify-center">
-                <span className="bg-gray-900 px-2 text-xs text-gray-400">
+                <span className="bg-zinc-900 px-2 text-xs text-zinc-500">
                   OR CONTINUE WITH
                 </span>
               </div>
             </div>
             
             <div className="grid grid-cols-2 gap-4">
-              <Button variant="outline" className="border-gray-700 bg-transparent text-gray-300 hover:bg-gray-800 hover:text-gray-200">
+              <Button variant="outline" className="border-zinc-800 bg-zinc-900 text-zinc-300 hover:bg-zinc-800 hover:text-zinc-50 hover:border-zinc-700">
                 Google
               </Button>
-              <Button variant="outline" className="border-gray-700 bg-transparent text-gray-300 hover:bg-gray-800 hover:text-gray-200">
+              <Button variant="outline" className="border-zinc-800 bg-zinc-900 text-zinc-300 hover:bg-zinc-800 hover:text-zinc-50 hover:border-zinc-700">
                 GitHub
               </Button>
             </div>
           </CardContent>
           
-          <CardFooter className="flex justify-center border-t border-gray-800 p-6">
-            <p className="text-sm text-gray-400">
-              Dont have an account?{" "}
+          <CardFooter className="flex justify-center border-t border-zinc-800 p-6">
+            <p className="text-sm text-zinc-400">
+              Don't have an account?{" "}
               <Link 
                 href="/signup" 
                 className="text-blue-400 hover:text-blue-300"
